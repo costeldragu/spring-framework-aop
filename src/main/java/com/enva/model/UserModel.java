@@ -7,8 +7,7 @@ public class UserModel {
     private String password;
 
 
-    public UserModel(Long id, String username, String email, String password) {
-        this.id = id;
+    public UserModel(final String username, final String email, final String password) {
         this.username = username;
         this.email = email;
         this.password = password;
@@ -21,7 +20,7 @@ public class UserModel {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(final Long id) {
         this.id = id;
     }
 
@@ -29,7 +28,7 @@ public class UserModel {
         return username;
     }
 
-    public void setUsername(String username) {
+    public void setUsername(final String username) {
         this.username = username;
     }
 
@@ -37,7 +36,7 @@ public class UserModel {
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(final String email) {
         this.email = email;
     }
 
@@ -45,12 +44,12 @@ public class UserModel {
         return password;
     }
 
-    public void setPassword(String password) {
+    public void setPassword(final String password) {
         this.password = password;
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(final Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
@@ -69,6 +68,11 @@ public class UserModel {
         result = 31 * result + (email != null ? email.hashCode() : 0);
         result = 31 * result + (password != null ? password.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "UserModel{" + "id=" + id + ", username='" + username + '\'' + ", email='" + email + '\'' + ", password='" + password + '\'' + '}';
     }
 }
 

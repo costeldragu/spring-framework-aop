@@ -37,6 +37,13 @@ public class UserRepositoryImpl implements UserRepository {
         return false;
     }
 
+    @Override
+    public String listAllUser() {
+        StringBuilder listUser = new StringBuilder();
+        userTable.values().forEach(user -> listUser.append(user.toString()).append(System.lineSeparator()));
+        return listUser.toString();
+    }
+
     private synchronized Long getNextUserId() {
         return ++nextUserId;
     }

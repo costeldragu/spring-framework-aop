@@ -10,8 +10,8 @@ import java.util.Map;
 @Repository
 public class UserRepositoryImpl implements UserRepository {
 
+    private static final Map<Long, UserModel> userTable = new HashMap<>();
     private static Long nextUserId = 0L;
-    private final Map<Long, UserModel> userTable = new HashMap<>();
 
     @Override
     public UserModel saveUser(final UserModel user) {
